@@ -1,0 +1,81 @@
+<script src="./p5.js"></script>
+
+<style>
+.verticalSlider { /* CSS-Klasse für die vertikalen Slider */
+      -webkit-appearance: none;
+      width: 100px;
+      height: 10px;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+		background-color: lightblue;
+    }
+</style>
+
+
+<body>
+<input type="range" id="mySlider" min="0" max="360" value="180" style="width: 400px;">
+<input type="range" id="ySlider" min="0" max="200" value="100" style="width: 200px; position: fixed; left: -80px; top: 120px; " class="verticalSlider">
+	
+	
+	
+	
+<script>
+let slider;
+let ballX;
+let ballRadius = 10;
+	
+
+let ySlider;
+let ballY;	
+	
+	
+let x = 200; // Startposition des Kreuzes (x-Koordinate)
+let y = 100;
+	
+	
+	
+	
+function setup() {
+  createCanvas(400, 200);
+  slider = document.getElementById("mySlider");
+	ySlider = document.getElementById("ySlider");
+	
+	//x = slider.value;
+  	//y = ySlider.value;
+	
+}
+
+function draw() {
+  background(220);
+	clear();
+
+  // Animation des Sliders
+
+	strokeWeight(1);
+	
+	stroke(0, 0, 0);
+	
+	ballX = map(slider.value, 0, 360, 0, width - ballRadius * 2);
+		//ballY = map(ySlider.value, 0, 200, 0, height - ballRadius * 2);
+	ballY = map(ySlider.value, 200, 0, 0, height - ballRadius * 2);
+
+	fill(173, 216, 230);
+	ellipse(ballX + ballRadius, height / 2, ballRadius * 2);
+
+	fill(255, 0, 0); // Rote Farbe für den zweiten Ball
+	ellipse(width / 2, ballY + ballRadius, ballRadius * 2);
+	
+	strokeWeight(3);
+	x = slider.value - 0 ;
+  	y = height - ySlider.value;
+	
+	stroke(0, 255, 0);
+	line(x, y, x + 40, y);
+  	line(x+20, y - 20, x+20, y + 20);
+}
+
+
+</script>
+</body>
+
+
