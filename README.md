@@ -1,3 +1,8 @@
 # slider
 
-![ScreenshotSlider](https://github.com/user-attachments/assets/3c9e62e9-8d5c-49c1-a1b5-a80b688837a0)
+
+![slider](https://github.com/user-attachments/assets/ebd87d7a-245f-4836-ab21-e2c5bafd5055)
+
+Html Sliders visualisation of position
+
+    git clone https://github.com/masterzuj/slider.git
